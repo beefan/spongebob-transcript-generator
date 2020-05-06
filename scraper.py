@@ -11,7 +11,7 @@ def create_document_from_episodes():
   document = open('spongebob-transcripts.txt', 'w')
   for ep in get_episodes():
     document.write(ep.title)
-    document.write('\n=========================================================')
+    document.write('\n\n=========================================================')
     document.write(ep.body)
     document.write('_________________________________________________________\n')
   

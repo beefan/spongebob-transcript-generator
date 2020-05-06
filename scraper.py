@@ -7,7 +7,7 @@ def main():
   create_document_from_episodes()
 
 def create_document_from_episodes():
-  print("opening document spongebob-transcript.txt. . .")
+  print("opening document spongebob-transcripts.txt. . .")
   document = open('spongebob-transcripts.txt', 'w')
   for ep in get_episodes():
     document.write(ep.title)

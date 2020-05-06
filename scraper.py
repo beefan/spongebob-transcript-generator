@@ -69,7 +69,7 @@ def is_transcript_link(tag):
     return False
   
   headerId = tag.parent.parent.parent.parent.previous_sibling.previous_sibling.contents[0]['id']
-  return re.compile('Season_(?!3)').search(headerId)
+  return re.compile('Season_').search(headerId)
 
 def make_link(aTag):
   return "https://spongebob.fandom.com" + aTag['href']

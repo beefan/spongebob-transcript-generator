@@ -13,7 +13,7 @@ flags = Namespace(
     embedding_size=64,
     lstm_size=64,
     gradients_norm=5,
-    initial_words=['Spongebob'],
+    initial_words=['_________________________________________________________'],
     predict_top_k=5,
     checkpoint_path='checkpoint'
 )
@@ -23,7 +23,7 @@ def main():
   int_to_vocab, vocab_to_int, n_vocab, in_text, out_text = process_data_from_file(flags.train_file, flags.batch_size, flags.seq_size)
   
   model = RNNModule(n_vocab, flags.seq_size, flags.embedding_size, flags.lstm_size)
-  model.load_state_dict(torch.load('../checkpoint_pt/model-1000.pth'))
+  model.load_state_dict(torch.load('../checkpoint_pt/model-9000-4.580765247344971.pth'))
   model.eval()
 
   predict(device, model, flags.initial_words, n_vocab, vocab_to_int, int_to_vocab, top_k=5)
@@ -47,7 +47,7 @@ def predict(device, net, words, n_vocab, vocab_to_int, int_to_vocab, top_k=5):
     words.append(int_to_vocab[choice])
     
     # append 100 more
-    for _ in range(100):
+    for _ in range(4000):
         ix = torch.tensor([[choice]]).to(device)
         output, (state_h, state_c) = net(ix, (state_h, state_c))
         

@@ -8,9 +8,8 @@
   * This folder has one `rnnBob.py` which has all the necessary code
   * And one `spongebob_txt_generation.ipynb` which is a jupyter notebook that does some explaining of the code
 
-3. Saved model from training epoch 1, iteration 1000 located at `checkpoint_pt/model-1000.pth`
 4. Python script to predict text based on saved model located at `rnn/predict_from_saved_model.py`
-5. 1000 words of predicted text at `rnn/prediction.txt`
+5. 1000 words of predicted text plus an entire predicted script at `rnn/example_predictions/`
 
 ### Example Prediction Text
 **SpongeBob:** Hey, you can have the greatest thing you go, Mr. Krabs. 
@@ -31,4 +30,4 @@
 
 ### Project Notes
 * PyTorch was significantly easier to use than I imagined. I spent a lot of time learning about recurrent neural networks and still trying to grasp the math but when it came down to it, pytorch made the hard parts easy.
-* Training was significantly slower than I imagined on my desktop. I use a budget machine with no standalone graphics card. Let the model train over night and didn't get through 20 epochs. Easy to see how machines with graphics cards dedicated for this might greatly improve the experience of a NLP dev. 
+* Training was significantly slower than I imagined on my desktop. I use a budget machine with no standalone graphics card. Let the model train for over 24 hours and got some interesting results, but only made it 1/10 through the total training loop. Easy to see how machines with graphics cards dedicated for this might greatly improve the experience of a NLP dev. Probably not going to let the model train for 10 days.
